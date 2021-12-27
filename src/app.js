@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 //connecting to mongodb
-mongoose.connect('mongodb://localhost/professional-staff')
+mongoose.connect('mongodb+srv://cesarhr-mongodb:<password>@professional-staff-data.hxves.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     .then(db => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
 
