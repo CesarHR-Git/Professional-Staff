@@ -1,0 +1,68 @@
+<%-  include  ('templates/_header') -%>
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb p-3">
+            <li class="breadcrumb-item">
+                <a href="/">Home <i class="fas fa-home"></i></a>
+            </li>
+            <li class="breadcrumb-item active">
+                List of professionals
+            </li>
+        </ol>
+    </nav>
+    <!-- /BREADCRUMB -->
+
+    <h1 class="text-center text-uppercase">professionals</h1>
+    <!-- CONTAINER -->
+    <div class="container-md">
+        <p>
+            <a href="/addView" class="btn btn-md btn-success"><i class="fas fa-plus"></i> Add new professional</a>
+        </p>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="text-uppercase">
+                <th class="text-center text-dark">ID</th>
+                <th class="text-center text-dark">First name</th>
+                <th class="text-center text-dark">Last name</th>
+                <th class="text-center text-dark">Email</th>
+                <th class="text-center text-dark">Mobile Number</th>
+                <th class="text-center text-dark">Actions</th>
+            </thead>
+            <tbody>
+                <% if(tasks){ for( var i = 0; i < tasks.length; i++){ %>
+                    <tr>
+                        <td>
+                            <%= i + 1 %>
+                        </td>
+                        <td>
+                            <%= tasks[i].firstName %>
+                        </td>
+                        <td>
+                            <%= tasks[i].lastName %>
+                        </td>
+                        <td>
+                            <%= tasks[i].email %>
+                        </td>
+                        <td>
+                            <%= tasks[i].phone %>
+                        </td>
+                        <td class="text-center">
+                            <a href="/view/<%= tasks[i]._id %>" class="icon"><i class="fas fa-eye"></i></a>&nbsp
+                            <a href="/edit/<%= tasks[i]._id %>" class="icon"><i class="fas fa-pen"></i></a>&nbsp
+                            <a href="/delete/<%= tasks[i]._id %>" class="icon deshabilitado"><i class="fas fa-trash"></i></a>&nbsp
+                        </td>
+                    </tr>
+                    <%} }%>
+            </tbody>
+        </table>
+    </div>
+    <!-- /CONTAINER -->
+
+    <!-- ALERT -->
+    <br>
+    <div class="alert alert-dismissible alert-danger">
+        <h4 class="alert-heading">Alert!</h4>
+        <p class="mb-0">DEMO OF CRUD. It is not available to add/edit/delete data. Only can view interfaces.</p>
+    </div>
+    <!-- /ALERT -->
+<%-  include  ('templates/_footer') -%>

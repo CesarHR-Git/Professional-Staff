@@ -1,0 +1,63 @@
+<%-  include  ('templates/_header') -%>
+<!-- BREADCRUMB -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb p-3">
+        <li class="breadcrumb-item">
+            <a href="/">Home <i class="fas fa-home"></i></a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="/listView">List of professionals</a>
+        </li>
+        <li class="breadcrumb-item active">
+            <%= tasks.firstName %> <%= tasks.lastName %>
+        </li>
+    </ol>
+</nav>
+<!-- /BREADCRUMB -->
+
+<!-- SECTION -->
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center text-uppercase mt-3 mb-3">Edit information</h3>
+            <!-- FORMULARIO -->
+            <form action="/edit/<%= tasks._id %>" method="POST">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label>First name</label>
+                        <input type="text" name="firstName" value="<%= tasks.firstName %>" class="form-control"/>
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Last name</label>
+                        <input type="text" name="lastName" value="<%= tasks.lastName %>" class="form-control"/>
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Email</label>
+                        <input type="email" name="email" value="<%= tasks.email %>" class="form-control"/>
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Mobile Number</label>
+                        <input type="tel" name="phone" value="<%= tasks.phone %>" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Resume</label>
+                        <textarea name="resume" class="form-control" rows="3"><%= tasks.resume %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>URL Image</label>
+                        <input type="text" name="url_image" value="<%= tasks.url_image %>" class="form-control"/>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg" disabled="true">
+                            Update
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- /FORMULARIO -->
+        </div>
+    </div>
+</div>
+<br>
+<!-- /SECTION -->
+<%-  include  ('templates/_footer') -%>

@@ -1,0 +1,54 @@
+<%-  include  ('templates/_header') -%>
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb p-3">
+            <li class="breadcrumb-item">
+                <a href="/">Home <i class="fas fa-home"></i></a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/listView">List of professionals</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <%= tasks.firstName %> <%= tasks.lastName %>
+            </li>
+        </ol>
+    </nav>
+    <!-- /BREADCRUMB -->
+
+    <!-- SECTION -->
+    <br><br>
+    <div class="mb-3">
+        <h3 class="text-center text-uppercase">Overview of a professional</h3>
+    </div>
+    <div class="col-md-6 container-md">
+        <div class="card">
+            <div class="card-body">
+                <div class="col imagen text-center">
+                    <img src="<%= tasks.url_image %>" width="250"/>
+                </div>
+                <br>
+                <div class="col">
+                    <h3 class="text-center">
+                        <strong class="text-dark"><%= tasks.firstName %></strong> <%= tasks.lastName %>
+                    </h3>
+                    <hr>
+                    <p class="text-secondary justify">
+                        <%= tasks.resume %>
+                    </p>
+                    <div class="row align-items-start text-center">
+                        <div class="col text-secondary">
+                            <p class="email">
+                                <%= tasks.email %>
+                            </p>
+                        </div>
+                        <div class="col text-dark">
+                            <%= tasks.phone %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- /SECTION -->
+<%-  include  ('templates/_footer') -%>

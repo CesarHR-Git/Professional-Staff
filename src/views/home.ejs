@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ícono del sitio web -->
+    <link rel="icon" type="image/x-icon" href="../public/images/node-icon.ico" />
+
+    <!-- título del sitio web-->
+    <title>Home</title>
+
+    <!-- estilos del sitio web -->
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+    <!-- HEADER -->
+    <header id="header">
+        <div class="inner">
+            <a href="#" class="image avatar">
+                <img src="../public/images/upnLogo.png" alt="" />
+            </a>
+            <h1>
+                <strong>We are Strata</strong>, our powerful team<br />
+                is prepare to deal the greatest challenges
+            </h1>
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- MAIN -->
+    <div id="main">
+
+        <!-- One -->
+        <section id="one">
+            <div class="alert-demo">
+                <h3>
+                    Demo of CRUD using NodeJS with Express and MongoDB.
+                </h3>
+            </div>
+            <header class="major">
+                <h2>Welcome to our web application<br />
+                    Meet our professional staff.</h2>
+            </header>
+            <p>
+                We have a large staff of professionals in their areas of development.
+                From teachers, researchers, analysts and testers, they make up our work team that
+                is trained to offer the widest solutions for development, design and testing.
+            </p>
+
+        </section>
+
+        <!-- TWO -->
+        <section id="two">
+            <div class="btn">
+                <ul class="actions">
+                    <li><a href="/addView" class="button">Add</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><a href="/listView" class="button btn-warning">List</a></li>
+                </ul>
+            </div>
+            <h2>Our team:</h2>
+            <div class="row">
+                <article class="col-6 col-12-xsmall work-item">
+                    <% if(tasks){ for(var i = 0; i < tasks.length; i++){ %>
+                        <a href="<%= tasks[i].url_image %>" class="image fit thumb">
+                            <img src="<%= tasks[i].url_image %>" alt="" />
+                        </a>
+                        <a href="/view/<%= tasks[i]._id %>" class="pathView">
+                            <h3>
+                                <%= tasks[i].firstName %> <%= tasks[i].lastName %>
+                            </h3>
+                        </a>
+                        <p>
+                            <%= tasks[i].email %>
+                        </p>
+                        <br>
+                        <%} }%>
+                </article>
+            </div>
+        </section>
+        <!-- /TWO -->
+    </div>
+    <!-- /MAIN -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="copyright">
+                <li>Purpose: <b>Demo</b></li><br>
+                <li>Author: <b>Cesar Manuel Hidalgo Rojas</b></li><br>
+                <li>Template: <b>&copy; Universidad Privada del Norte</b></li><br>
+                <li>Course: <b>Web Solutions and Distributed Applications</b></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+
+    <!-- SCRIPTS -->
+    <script src="../public/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../public/assets/js/jquery.poptrox.min.js" type="text/javascript"></script>
+    <script src="../public/assets/js/browser.min.js" type="text/javascript"></script>
+    <script src="../public/assets/js/breakpoints.min.js" type="text/javascript"></script>
+    <script src="../public/assets/js/util.js" type="text/javascript"></script>
+    <script src="../public/assets/js/main.js" type="text/javascript"></script>
+
+</body>
+
+</html>
