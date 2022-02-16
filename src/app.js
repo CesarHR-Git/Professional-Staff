@@ -12,8 +12,8 @@ const mongoose = require("mongoose");
 const app = express();
 
 //connecting to mongodb
-mongoose.connect('mongodb+srv://cesarhr-mongodb:rAsEc2030@professional-staff-data.hxves.mongodb.net/professional-staff-database?retryWrites=true&w=majority')
-    .then(db => console.log("MongoDB Connected"))
+mongoose.connect('uri_database')
+    .then(db => console.log("Database Connected"))
     .catch(err => console.log(err));
 
 //importing routes
@@ -26,7 +26,7 @@ app.set('view engine', 'ejs');
 
 //middleware
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 app.use('/', professionalRoutes);
 app.use('/public', express.static(path.join(__dirname, "public")));
 
