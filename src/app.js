@@ -12,9 +12,10 @@ const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const app = express();
 dotenv.config();
+const DB_URI = process.env.DB_URI;
 
 //connecting to mongodb
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@professional-staff-data.hxves.mongodb.net/professional-staff-database?retryWrites=true&w=majority`)
+mongoose.connect(DB_URI)
     .then(db => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
 
