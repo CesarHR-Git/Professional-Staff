@@ -5,16 +5,16 @@
 \*--------------------------------------------*/
 
 //references to libraries
-require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const URI = process.env.URI_DATABASE;
+const dotenv = require('dotenv');
 const app = express();
+dotenv.config();
 
 //connecting to mongodb
-mongoose.connect(`mongodb+srv://cesarhr-mongodb:professional_demo_database@professional-staff-data.hxves.mongodb.net/professional-staff-database?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@professional-staff-data.hxves.mongodb.net/professional-staff-database?retryWrites=true&w=majority`)
     .then(db => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
 
