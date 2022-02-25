@@ -5,15 +5,17 @@
 \*--------------------------------------------*/
 
 //references to libraries
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const URI = process.env.URI_DATABASE;
 const app = express();
 
 //connecting to mongodb
-mongoose.connect('uri_database')
-    .then(db => console.log("Database Connected"))
+mongoose.connect(`mongodb+srv://cesarhr-mongodb:professional_demo_database@professional-staff-data.hxves.mongodb.net/professional-staff-database?retryWrites=true&w=majority`)
+    .then(db => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
 
 //importing routes
